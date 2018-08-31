@@ -19,3 +19,13 @@ export const get = (options: PossibleRequestOptions): Promise<request.Response> 
     }
   });
 });
+
+export const post = (options: PossibleRequestOptions): Promise<request.Response> => new Promise((resolve, reject) => {
+  request.post(options, (error, response, body) => {
+    if(error) {
+      reject(new RequestError(error));
+    } else {
+      resolve(response);
+    }
+  });
+});
