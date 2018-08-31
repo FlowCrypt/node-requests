@@ -5,4 +5,5 @@ export declare class RequestError extends Error {
     constructor(reason: any);
 }
 export declare const get: (options: PossibleRequestOptions) => Promise<request.Response>;
+export declare const post: (options: PossibleRequestOptions) => Promise<request.Response>;
 export {};

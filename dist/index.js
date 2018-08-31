@@ -18,4 +18,14 @@ exports.get = (options) => new Promise((resolve, reject) => {
         }
     });
 });
+exports.post = (options) => new Promise((resolve, reject) => {
+    request.post(options, (error, response, body) => {
+        if (error) {
+            reject(new RequestError(error));
+        }
+        else {
+            resolve(response);
+        }
+    });
+});
 //# sourceMappingURL=index.js.map
